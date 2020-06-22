@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AddSpot extends Model
+class NewSpot extends Model
 {
     //
 }
