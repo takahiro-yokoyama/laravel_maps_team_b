@@ -13,5 +13,8 @@
 //login,user,regist ために
 Auth::routes();
 
+//topページ
+Route::get('/top', 'AnimeController@index');
+
 // 初めての方向けページ
 Route::get('/guide', 'GuideAction');
