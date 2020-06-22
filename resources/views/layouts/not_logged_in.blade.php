@@ -2,27 +2,13 @@
 
 @section('header')
 <header>
-    <ul class="header_box header_nav">
-        <li class="header_menu">
-            <a href="">
-                <img class="logo" src="{{ asset(web_image/logo.png) }}"></img>
-            </a>
-        </li>
-        <li class="header_menu">
-            <a class="header_link" href="{{ route('') }}">
-                聖地一覧
-            </a>
-        </li>
-        <li class="header_menu">
-            <a class="header_link" href="{{ route('register') }}">
-                ユーザー登録
-            </a>
-        </li>
-        <li class="header_menu">
-            <a class="header_link" href="{{ route('login') }}">
-                ログイン
-            </a>
-        </li>
-    </ul>
+    <div class="header_box">
+        <a href="">
+            <img class="logo" src="{{ asset('logo/logo.png') }}"></img>
+        </a>
+        <div class="header_menu"><a class="header_link" href="">ログイン</a></div>
+        <div class="header_menu header_spe"><a class="header_link" href="">ユーザー登録</a></div>
+        <div class="header_menu header_spe"><a class="header_link" href="">聖地一覧</a></div>
+    </div>
 </header>
 @endsection

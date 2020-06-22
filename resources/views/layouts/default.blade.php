@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>@yield('title')</title>
+    <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ secure_asset('css/styles_yokoyama.css') }}">
     <link rel="stylesheet" href="{{ secure_asset('css/styles_togei.css') }}">
     <link rel="stylesheet" href="{{ secure_asset('css/styles_ishizaka.css') }}">
@@ -32,7 +33,7 @@
 <footer>
     <section class="foot_all">
         <p style="text-align:center"><a class="foot_link" href="">お問い合わせ</a></p>
-        <p class="footer_img"><img src="{{ asset('web_image/team_logo.png') }}"></img></p>
+        <p class="footer_img"><img src="{{ asset('logo/team_logo.png') }}"></img></p>
         <p style="text-align:center;color:black;font-size:10px"><small>Copyright &copy; B-Team All Rights Reserved.</small></p>
     </section>
 </footer>

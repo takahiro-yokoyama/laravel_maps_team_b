@@ -2,28 +2,39 @@
 
 @section('content')
 <h1>会員登録</h1>
-<form method="POST" action="{{ route('register') }}">
-    @csrf
-    <div>
+<div class="container" class="login_body">
+    <form method="POST" action="{{ route('register') }}">
+      @csrf
+      <div>
         <label>
-            ユーザー名:
-            <input type="text" name="name">
+          ユーザー名:
+          <input type="text" name="name">
         </label>
-    </div>
-    <div>
+      </div>
+    
+      <div>
         <label>
-            パスワード:
-            <input type="password" name="password">
+          メールアドレス:
+          <input type="email" name="email">
         </label>
-    </div>
-    <div>
+      </div>
+    
+      <div>
         <label>
-            パスワード（確認用）:
-            <input type="password" name="password_confirmation" >
+          パスワード:
+          <input type="password" name="password">
         </label>
-    </div>
-    <div>
+      </div>
+    
+      <div>
+        <label>
+          パスワード（確認用）:
+          <input type="password" name="password_confirmation" >
+        </label>
+      </div>
+      <div>
         <input type="submit" value="登録">
-    </div>
-</form>
+      </div>
+    </form>
+</div>
 @endsection
