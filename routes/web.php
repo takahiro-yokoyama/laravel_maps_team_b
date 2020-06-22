@@ -12,3 +12,6 @@
 */
 //login,user,regist ために
 Auth::routes();
+
+// 初めての方向けページ
+Route::get('/guide', 'GuideAction');
