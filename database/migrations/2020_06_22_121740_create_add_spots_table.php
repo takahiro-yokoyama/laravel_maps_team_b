@@ -13,7 +13,7 @@ class CreateAddSportsTable extends Migration
      */
     public function up()
     {
-        Schema::create('add_sports', function (Blueprint $table) {
+        Schema::create('add_spots', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('anime_name',50);
             $table->string('anime_content',200);
@@ -31,6 +31,6 @@ class CreateAddSportsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('add_sports');
+        Schema::dropIfExists('add_spots');
     }
 }
