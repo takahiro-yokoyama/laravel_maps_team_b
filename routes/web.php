@@ -12,3 +12,6 @@
 */
 //login,user,regist ために
 Auth::routes();
+
+//topページ
+Route::get('/top', 'AnimeController@index');
