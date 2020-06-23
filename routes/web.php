@@ -18,3 +18,7 @@ Route::get('/top', 'AnimeController@index');
 
 // 初めての方向けページ
 Route::get('/guide', 'GuideAction');
+
+//スポット詳細画面ページ
+Route::get('/detail/{id}', 'DetailController@detail');
+Route::post('/detail', 'DetailController@store');
