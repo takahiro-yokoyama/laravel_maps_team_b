@@ -3,7 +3,7 @@
 @section('content')
 <section class="content">
     <h1 id="add_h1">{{ $title }}</h1>
-    <form action="{{ url('/add_spot') }}" method="post" id="add_form">
+    <form action="/add_spot" method="post" id="add_form">
         @csrf
         <p><span class="add_spot_key">位置情報</span></p>
         <label class="add_label"><span class="add_spot_red">*</span>住所　<input class="add_place" type="text" name="address" value="{{ $address }}"></label><br>

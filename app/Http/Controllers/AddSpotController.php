@@ -38,12 +38,5 @@ class AddSpotController extends Controller
         ]);
         
         \Session::flash('success', '聖地を追加しました！');
-        
-        return view('add_spot',[
-            'title' => $title,
-            'address' => $address,
-            'lat' => $lat,
-            'lng' => $lng,
-        ]);
     }
 }
