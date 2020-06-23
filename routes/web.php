@@ -30,3 +30,6 @@ Route::get('/guide', 'GuideAction');
 //アニメ検索後
 Route::get('/maps/anime', 'AnimeController@animeIndex');
 
+//お問い合わせ
+Route::get('/contact', 'ContactAction');
+
