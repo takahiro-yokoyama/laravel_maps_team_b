@@ -9,10 +9,9 @@
             <div id="search">
                 <div class="search_key">
                     <h2>アニメから検索</h2>
-                    <form method="post" action="" class="search_container">
+                    <form method="get" action="{{ url('/maps/anime') }}" class="search_container">
                         @csrf
-                        @method('patch')
-                        <select name="anime_name">
+                        <select name="anime">
                             @foreach($animes as $anime)
                             <option value="{{ $anime->id }}">{{ $anime->anime_name }}</option>
                             @endforeach
