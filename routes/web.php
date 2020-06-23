@@ -13,13 +13,26 @@
 //login,user,regist ために
 Auth::routes();
 
+
+Route::get('/mapSpotsList','MapSpotsListController@index');
+Route::resource('like','LikeController')->only(['index','destroy']);
+
+
+Route::get('/mapSpotsList','MapSpotsListController@index');
+
 //topページ
 Route::get('/top', 'AnimeController@index');
 
 // 初めての方向けページ
 Route::get('/guide', 'GuideAction');
 
+
 // スポット追加フォーム
-Route::post('/mapSpotList/create', 'AddSpotController@create');
+Route::post('/mapSpotsList/create', 'AddSpotController@create');
 // スポット追加
 Route::post('/add_spot', 'AddSpotController@store');
+
+
+//アニメ検索後
+Route::get('/maps/anime', 'AnimeController@animeIndex');
+
