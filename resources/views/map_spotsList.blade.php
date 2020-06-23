@@ -123,7 +123,7 @@
                             '<p><strong>'+spot_data[marker_num]['anime_name']+'</strong></p>'+
                             '<div class="marker_content_img_div"><img class="marker_content_img"src="upload_image/'+spot_data[marker_num]['spot_image']+'"></img></div>'+
                             '<p>'+spot_content+'...</p>'+
-                            '<p><a href="spot_detail.php?spot_id='+spot_data[marker_num]['spot_id']+'">詳細へ</a></p>';
+                            '<p><a href="/detail/'+spot_data[marker_num]['spot_id']+'">詳細へ</a></p>';
         return contentString
     }
     
@@ -158,6 +158,7 @@
                     var contentString = '<h1>ここにアニメスポットを追加したいですか</h1>'+
                                       '<p>追加したい場所：'+ add_address +'</p>'+
                                       '<form method="post" action="add_spot.php" class="main_map_addspot">'+
+                                            '@csrf'+
                                             '<input type="hidden" name="new_address" value="'+ add_address　+'"/>'+
                                             '<input type="hidden" name="new_lat" value="'+ latlng.lat() +'"/>'+
                                             '<input type="hidden" name="new_lng" value="'+ latlng.lng()+'"/>'+
