@@ -12,7 +12,7 @@ class Location extends Model
         return $this->belongsTo('App\Anime');
     }
     
-    public function Spot(){
+    public function spot(){
         return $this->belongsTo('App\Spot');
     }
 }

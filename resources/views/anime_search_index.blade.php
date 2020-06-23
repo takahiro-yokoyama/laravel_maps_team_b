@@ -15,7 +15,7 @@
                     @method('pacth')
                     <input type="hidden" name="anime_id" value="{{ $anime->id }}"/>
                     <div style="float:right;margin-right:100px;margin-top:20px">
-                        <button type ="submit" name="like_spot_id" value="{{ $spot->id }}" >マーカー登録</button>
+                        <button type ="submit" name="like_spot_id" value="{{ $spot->id }}" >お気に入り登録</button>
                         <img class="map_page_map_btn" data-spotid="{{ $spot->id }}" src="{{ asset('web_image/map_page_map.png') }}"></img>
                     </div>
                     <div style="margin-left:20px">
@@ -48,14 +48,17 @@
 </div>
 @endif
 <div class="return_div"><a class="return_link" href="/top">トップ画面に戻る</a></div>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="{{ asset('JS/main_js.js') }}"></script>
 <script>
     var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var labelIndex = 0;
     var map_spot;
     var map;
     var markers = [];
+    var i = 0;
     function initMap(){
-        map_spot = JSON.parse('{{ $spots_json }}');
+        map_spot = JSON.parse('<?php print $spots_json; ?>');
         console.log(map_spot[0]);
         var map_box = document.getElementById('map_page_map_box');
         var mapCenter = {
@@ -78,24 +81,24 @@
             addMaker();
         }
         markers_monitor();
+        spot_name_monitor();
         list_map_monitor();
     }
       
     function addMaker(){
-        // console.log(like_spot);
-        var i = 0;
         map_spot.forEach(function(value){
             var lat = parseFloat(value['lat']);
             var lng = parseFloat(value['lng']);
             var marker = new google.maps.Marker({
                 map: map,
                 position: {lat:lat,lng:lng},
-                label: map_spot[i]['spot_id']
+                label: map_spot[i]['id'].toString()
             });
             markers.push(marker);
             i++;
         });
     }
+    
     function markers_monitor(){
         markers.forEach(function(marker){
             marker.addListener('click',function(){
@@ -106,11 +109,11 @@
         });
     }
     
-    function marker_content_creat(spot_id){
-        spot_id = parseInt(spot_id);
+    function marker_content_creat(id){
+        id = parseInt(map_spot[i]['id']);
         var marker_num;
         for (var i = 0; i < map_spot.length; i++) {
-            if(map_spot[i]['spot_id'] == spot_id){
+            if(map_spot[i]['id'] == id){
                 marker_num = i;
                 break;
             }
@@ -123,11 +126,11 @@
                             '<p><strong>'+map_spot[marker_num]['anime_name']+'</strong></p>'+
                             '<div class="marker_content_img_div"><img class="marker_content_img"src="'+map_spot[marker_num]['spot_image']+'"></img></div>'+
                             '<p>'+spot_content+'...</p>'+
-                            '<p><a href="spot_detail.php?spot_id='+map_spot[marker_num]['spot_id']+'">詳細へ</a></p>';
+                            '<p><a href="?spot_id='+map_spot[marker_num]['id']+'">詳細へ</a></p>';
         return contentString
     }
+    
     function list_map_monitor(){
-        //spotid
         var map_page_map_btns = Array.from(document.getElementsByClassName('map_page_map_btn'));
         map_page_map_btns.forEach(function(map_page_map_btn){
             map_page_map_btn.addEventListener('click',function(){
@@ -136,7 +139,7 @@
                 spot_id = parseInt(spot_id);
                 var marker_num;
                 for (var i = 0; i < map_spot.length; i++) {
-                    if(map_spot[i]['spot_id'] == spot_id){
+                    if(map_spot[i]['id'] == spot_id){
                         marker_num = i;
                         break;
                     }
