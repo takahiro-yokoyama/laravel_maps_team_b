@@ -90,6 +90,9 @@ footer{
     text-align:center;
 }
 
+.contact{
+    width:500px;
+}
 .login{
     width:235px;
     border:solid 1px #e6e6fa;
