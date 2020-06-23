@@ -2,6 +2,9 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <!--This request has been blocked; the content must be served over HTTPS.このエラーをため-->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ secure_asset('css/styles_yokoyama.css') }}">

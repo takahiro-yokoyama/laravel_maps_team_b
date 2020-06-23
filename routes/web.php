@@ -12,3 +12,5 @@
 */
 //login,user,regist ために
 Auth::routes();
+
+Route::get('/mapSpotsList','MapSpotsListController@index');
