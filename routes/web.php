@@ -14,3 +14,4 @@
 Auth::routes();
 
 Route::get('/mapSpotsList','MapSpotsListController@index');
+Route::resource('like','LikeController')->only(['index','destroy']);
