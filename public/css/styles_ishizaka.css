@@ -89,3 +89,9 @@ footer{
 .beginner_link{
     text-align:center;
 }
+
+.login{
+    width:235px;
+    border:solid 1px #e6e6fa;
+    padding:10px;
+}
