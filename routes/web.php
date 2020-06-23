@@ -13,6 +13,9 @@
 //login,user,regist ために
 Auth::routes();
 
+
+Route::get('/mapSpotsList','MapSpotsListController@index');
+
 //topページ
 Route::get('/top', 'AnimeController@index');
 
@@ -21,3 +24,4 @@ Route::get('/guide', 'GuideAction');
 
 //アニメ検索後
 Route::get('/maps/anime', 'AnimeController@animeIndex');
+
