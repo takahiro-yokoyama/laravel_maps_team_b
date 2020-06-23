@@ -157,7 +157,7 @@
                     console.log("test",add_address);
                     var contentString = '<h1>ここにアニメスポットを追加したいですか</h1>'+
                                       '<p>追加したい場所：'+ add_address +'</p>'+
-                                      '<form method="post" action="add_spot.php" class="main_map_addspot">'+
+                                      '<form method="get" action="/mapSpotLists/create" class="main_map_addspot">'+
                                             '@csrf'+
                                             '<input type="hidden" name="new_address" value="'+ add_address　+'"/>'+
                                             '<input type="hidden" name="new_lat" value="'+ latlng.lat() +'"/>'+
