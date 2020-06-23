@@ -28,11 +28,11 @@ Route::get('/guide', 'GuideAction');
 
 
 // スポット追加フォーム
-Route::post('/add_spot/create', 'AddSpotController@create');
+Route::post('/mapSpotsList/create', 'AddSpotController@create');
+Route::get('/mapSpotsList/create', 'AddSpotController@create');
 // スポット追加
 Route::post('/add_spot', 'AddSpotController@store');
 
-Route::get('/add_spot/create', 'AddSpotController@create');
 
 //アニメ検索後
 Route::get('/maps/anime', 'AnimeController@animeIndex');
