@@ -41,4 +41,8 @@ class User extends Authenticatable
     public function likeSpots(){
         return $this->hasmany('App\LikeSpot');
     }
+    
+    public function comment(){
+        return $this->belongsTo('App\Comment');
+    }
 }
