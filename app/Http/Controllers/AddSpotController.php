@@ -42,5 +42,6 @@ class AddSpotController extends Controller
         ]);
         
         \Session::flash('success', '聖地を追加しました！');
+        return redirect('/top');
     }
 }
