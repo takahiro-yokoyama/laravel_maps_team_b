@@ -41,6 +41,7 @@ Route::get('/maps/likeinsert/{id}','AnimeController@likeSpotInsert');
 
 //お問い合わせ
 Route::get('/contact', 'ContactAction');
+Route::post('/contact', 'QuestionController@store');
 
 
 //スポット詳細画面ページ
