@@ -3,10 +3,10 @@
 @section('title', $title)
 
 @section('content')
-<h1>{{ $title }}</h1>
-<h2 id="detail_h2"></h2>
+<section class="content">
 @foreach($spots as $spot)
-<h2 id="detail_h2">{{ $spot->name }}</h2>
+<h2 id="detail_h2">{{ $spot->anime->anime_name }}</h2>
+<h2 id="detail_h2">{{ $spot->spot_name }}</h2>
 <div id="detail_page_map_box"></div>
 <img class="detail_img" src="{{ asset('upload_image/' . $spot->spot_image) }}"></img>
 <table class="detail_table">
@@ -89,6 +89,7 @@
 </div>
 @endif
 <div class="return_div"><a  class="return_link" href="{{ url('/top') }}">TOPへ戻る</a></div>
+</section>
 <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="{{ asset('JS/main_js.js') }}"></script>
 <script>

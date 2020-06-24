@@ -12,4 +12,5 @@ class Anime extends Model
     public function spots(){
         return $this -> hasMany('App\Spot');
     }
+    
 }
