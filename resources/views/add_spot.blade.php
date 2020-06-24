@@ -1,4 +1,4 @@
-@extends('layouts.logged_in')
+@extends('layouts.header')
 
 @section('content')
 <section class="content">
