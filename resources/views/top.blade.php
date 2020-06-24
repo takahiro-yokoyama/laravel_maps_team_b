@@ -1,4 +1,4 @@
-@extends('layouts.not_logged_in')
+@extends('layouts.header')
 
 @section('title', $title)
 

@@ -152,6 +152,11 @@ return [
             'anime_name' => 'アニメの名前',
             'spot_name' => '聖地の名前',
             'spot_content' => '聖地の説明',
+            'content' => 'お問い合わせ内容',
+            'name' => '氏名',
+            'company' => '会社名',
+            'email' => 'メールアドレス',
+            'phone' => '電話番号',
     ],
 
 ];
