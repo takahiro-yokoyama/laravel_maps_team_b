@@ -80,7 +80,7 @@
                     </form>
                 </div>
             </div>
-            <h2 class="beginner_link"><a href="">はじめての方へ</a></h2>
+            <h2 class="beginner_link"><a href="{{ url('/guide') }}">はじめての方へ</a></h2>
             <h2>聖地巡礼のマナー</h2>
             <div class="manner">
                 <h3>聖地は二次元ではなく現実です</h3>
