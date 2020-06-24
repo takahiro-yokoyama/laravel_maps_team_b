@@ -1,5 +1,4 @@
-@extends('layouts.not_logged_in')
-
+@extends('layouts.header')
 @section('content')
 <div class="login mx-auto my-5 row">
 <h1>会員登録</h1>

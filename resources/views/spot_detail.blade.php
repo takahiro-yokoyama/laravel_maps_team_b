@@ -43,7 +43,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="popupLabel">ユーザー名:{{ \Auth::user()->name }}さん</h5>
+        @if(isset(Auth::user()->name))
+        <h5 class="modal-title" id="popupLabel">ユーザー名:{{ Auth::user()->name }}さん</h5>
+        @else
+        <h5 class="modal-title" id="popupLabel">ユーザー名:</h5>
+        @endif
         <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
           <span aria-hidden="true">&times;</span>
         </button>
