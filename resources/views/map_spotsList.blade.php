@@ -19,13 +19,11 @@
 </section>
 <div id="important" style="position:absolute;">
     <div style="text-align:right;cursor:pointer;" id="closeA">閉じる</div>
-    <img src="logo/important.png" border="0" width="100" height="100" />
+    <img src="logo/avdertising1.png" border="0" width="300" height="300" />
 </div>
 <div id="questionnaire" style="position:absolute;">
     <div style="text-align:right;cursor:pointer;" id="closeB">閉じる</div>
-    <a href="" target="_blank">
-        <img src="logo/questionnaire.jpg" border="0" width="150" height="100" />
-    </a>
+    <img src="logo/avdertising2.png" border="0" width="300" height="300" />
 </div>
 <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="{{ asset('JS/main_js.js') }}"></script>
