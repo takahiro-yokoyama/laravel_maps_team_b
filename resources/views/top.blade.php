@@ -7,7 +7,7 @@
     <div id="search">
         <div class="search_key">
             <h2>アニメから検索</h2>
-            <form method="post" action="{{ url('maps.anime_index') }}" class="search_form search_container">
+            <form method="post" action="{{ route('maps.anime_index') }}" class="search_form search_container">
                 @csrf
                 <select name="anime" class="search_anime_select">
                     @foreach($animes as $anime)
