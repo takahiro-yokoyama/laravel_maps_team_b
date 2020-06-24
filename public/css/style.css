@@ -215,23 +215,6 @@ footer{
     text-align: center;
 }
 
-/*popup表示させたいコンテンツのレイアウトと位置*/
-#popup{
-    border:solid 1px #777777;
-    border-radius:6px;
-    width:30%;
-    line-height:100px;
-    background-color:#ffffff;
-    padding:0 4%;
-    box-sizing:border-box;
-    display:none;
-    position:fixed;
-    top:50%;
-    left:50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-
 .comment_label{
     display:block;
     margin:30px auto 0 auto;
@@ -248,33 +231,6 @@ footer{
     border-radius:6px;
     text-align:center;
     font-weight: bold;
-}
-
-.comment_label, .add_comment_title:hover{
-    cursor:pointer;
-}
-.comment_label input[type="checkbox"]{
-    display:none;
-}
-/*checkboxがcheckの状態になったらpopupを表示させる*/
-.comment_label input[type="checkbox"]:checked + #popup{
-    display:block;
-}
-
-.comment_form textarea {
-    height:85px;
-}
-
-.icon-close{
-    background: #777777;
-    color: #fff;
-    font-size: 20px;
-    padding: 0 10px;
-    position: absolute;
-    right: 0;
-}
-.header_user_name_text{
-    margin-top:0;
 }
 
 #map_h3{
@@ -398,7 +354,7 @@ footer{
     display: inline-flex;
     width: 900px;
     height: 200px;
-    margin: 0px auto 60px auto;
+    margin: 0px auto ;
     padding-top: 20px;
 }
 
@@ -408,10 +364,11 @@ footer{
 
 .search_anime_select{
     width: 180px;
+    height: 30px;
 }
 
-.search_area_select{
-    width: 140px;
+.search_area_text{
+    margin-top: 8px;
 }
 
 .top_text{
