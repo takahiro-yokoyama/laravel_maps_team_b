@@ -29,12 +29,17 @@ class DetailController extends Controller
                 ->select('locations.lat','locations.lng')
                 ->where('spots.id', $id)
                 ->get();
+        $username='';
+        if(isset(\Auth::user()->name)){
+            $username=\Auth::user()->name;
+        }
         $spots_json = $service->getSpotsJson($datas);
         return view('spot_detail', [
           'title' => 'スポット詳細',
           'spots' => $spots,
           'comments' => $comments,
           'spots_json' => $spots_json,
+          'user_name'=>$username,
         ]);
     }
     
