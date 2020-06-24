@@ -38,6 +38,7 @@ Route::get('/maps/anime', 'AnimeController@animeIndex');
 
 //お問い合わせ
 Route::get('/contact', 'ContactAction');
+Route::post('/contact', 'QuestionController@store');
 
 
 //スポット詳細画面ページ
