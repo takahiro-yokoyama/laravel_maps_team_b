@@ -127,3 +127,12 @@
     background-color: #FF7722;
     color: white;
 }
+
+.top_text{
+    margin: 10px 100px;
+    text-align: center;
+}
+
+.top_h3{
+    margin: 30px 0px;
+}
