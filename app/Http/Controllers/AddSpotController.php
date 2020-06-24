@@ -8,6 +8,10 @@ use App\Http\Requests\NewSpotRequest;
 
 class AddSpotController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     public function create(Request $request){
         $title = '聖地追加';
         $address = $request->input('new_address');
