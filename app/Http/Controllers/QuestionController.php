@@ -28,8 +28,8 @@ class QuestionController extends Controller
             'content' => ['required', 'min:30', 'max:1000'],
             'name' => ['required', 'min:2', 'max:20'],
             'company' => ['required', 'min:2', 'max:20'],
-            'email' => ['required', 'min:2', 'max:50'],
-            'phone' => ['required', 'min:2', 'max:20'],
+            'email' => ['required', 'email', 'min:2', 'max:50'],
+            'phone' => ['required', 'numeric', 'max:9999999999'],
         ]);
         
         $question = Question::create(
@@ -41,7 +41,9 @@ class QuestionController extends Controller
             'phone'
           ])
         );
-
+        
+        \Session::flash('success', 'お問い合わせを受け付けました。ありがとうございました。');
+        
         // $question = Question::create([
         //   'content' => $request->content,
         //   'name' => $request->name,
