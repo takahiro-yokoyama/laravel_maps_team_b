@@ -379,3 +379,15 @@ footer{
 #top_image_usagi4{
     width: 240px;
 }
+
+.list_like_icon:hover{
+    cursor : pointer;
+}
+
+.map_page_map_btn:hover{
+    cursor : pointer;
+}
+
+.mark_text{
+    margin-left: 540px;
+}
