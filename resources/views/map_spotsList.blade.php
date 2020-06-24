@@ -1,5 +1,4 @@
-@extends('layouts.not_logged_in')
-
+@extends('layouts.header')
 @section('content')
 <section class="main_content">
     <!--ここに追加-->
