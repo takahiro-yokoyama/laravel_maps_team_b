@@ -168,7 +168,7 @@
                             '<p><strong>'+map_spot[marker_num]['anime_name']+'</strong></p>'+
                             '<div class="marker_content_img_div"><img class="marker_content_img"src="../upload_image/'+map_spot[marker_num]['spot_image']+'"></img></div>'+
                             '<p>'+spot_content+'...</p>'+
-                            '<p><a href="detail/'+map_spot[marker_num]['spot_id']+'">詳細へ</a></p>';
+                            '<p><a href="detail/'+map_spot[marker_num]['id']+'">詳細へ</a></p>';
         return contentString
     }
     function list_map_monitor(){
