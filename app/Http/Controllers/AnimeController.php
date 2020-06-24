@@ -81,8 +81,8 @@ class AnimeController extends Controller
             $user_id = \Auth::user()->id;
             $like_spots = \Auth::user()->likeSpots;
             $u_l_data = $like_spots->pluck('spot_id');
+            $u_l_data=$u_l_data->toArray();
         }
-        $u_l_data=$u_l_data->toArray();
         $user_like_spot_data_json = json_encode($u_l_data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_PARTIAL_OUTPUT_ON_ERROR | JSON_UNESCAPED_UNICODE);
         $user_like_spot_data_json = str_replace('\n','',$user_like_spot_data_json); 
         return view('place_search_index',[
