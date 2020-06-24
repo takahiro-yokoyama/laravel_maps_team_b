@@ -17,7 +17,7 @@ class MapSpotsListController extends Controller
                     ->join('animes','spots.anime_id','=','animes.id')
                     ->join('locations','spots.location_id','=','locations.id')
                     ->select('animes.anime_name','spots.spot_name','locations.address','locations.lat',
-                             'locations.lng','spots.spot_content','spots.spot_image')
+                             'locations.lng','spots.spot_content','spots.spot_image','spots.id')
                     ->get();
         $spots_data_json = json_encode($data, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_PARTIAL_OUTPUT_ON_ERROR | JSON_UNESCAPED_UNICODE);
         $spots_data_json = str_replace('\n','',$spots_data_json); 

@@ -39,7 +39,13 @@
             <img class="logo" src="{{ asset('logo/logo.png') }}"></img>
         </a>
         <div class="header_menu"><p>ユーザー名:{!! Auth::user()->name !!}</p></div>
-        <div class="header_menu header_spe"><a class="header_link" href="{{route('logout') }}">ログアウト</a></div>
+        
+        <div class="header_menu header_spe">
+            <form method="post" action="{{ route('logout') }}">
+                @csrf
+                <input type="submit" value="ログアウト"/>
+            </form> 
+        </div>
         <div class="header_menu header_spe"><a class="header_link" href="{{route('like.index')}}">ルート探索</a></div>
         <div class="header_menu header_spe"><a class="header_link" href="{{url('/mapSpotsList')}}">聖地一覧</a></div>
         <div class="header_menu header_spe"><a class="header_link" href="{{url('/top')}}">聖地検索</a></div>
