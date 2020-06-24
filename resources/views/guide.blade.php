@@ -55,10 +55,10 @@
     <h2 class="guide_h2">会員登録をすれば様々な場所に訪れる聖地巡礼中でも<br>
         多様な媒体からアクセスすることができます！<br>
     </h2>
-    <a class="log_border" href="register.php">
+    <a class="log_border" href="{{ url('register') }}">
         <input class="log" type="submit" value="会員登録はこちら">
     </a>
-    <div class="no_login">会員登録しないで利用する方は<a href="search.php">こちら</a></div>
+    <div class="no_login">会員登録しないで利用する方は<a href="{{ url('top') }}">こちら</a></div>
 </div>
 
 
