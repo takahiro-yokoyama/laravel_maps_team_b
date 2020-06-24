@@ -18,8 +18,6 @@ Route::get('/mapSpotsList','MapSpotsListController@index');
 Route::resource('like','LikeController')->only(['index','destroy']);
 
 
-Route::get('/mapSpotsList','MapSpotsListController@index');
-
 //topページ
 Route::get('/top', 'AnimeController@index');
 
@@ -28,5 +26,7 @@ Route::get('/guide', 'GuideAction');
 
 
 //アニメ検索後
-Route::get('/maps/anime', 'AnimeController@animeIndex');
-
+Route::post('/maps/anime_search', 'AnimeController@animeIndex')->name('maps.anime_index');
+Route::post('/maps/place_search', 'AnimeController@placeIndex')->name('maps.place_index');
+Route::get('/maps/likeselect/{id}','AnimeController@likeSpotsselect');
+Route::get('/maps/likeinsert/{id}','AnimeController@likeSpotInsert');
