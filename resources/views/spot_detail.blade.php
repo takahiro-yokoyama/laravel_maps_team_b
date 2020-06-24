@@ -99,7 +99,7 @@
     var user_name;
     var map_spot;
     function initMap(){
-        user_name = '{{ \Auth::user()->name }}';
+        user_name = '<?php print $user_name;?>';
         map_spot = JSON.parse('<?php print $spots_json; ?>');
         var map_box = document.getElementById('detail_page_map_box');
         console.log(map_spot);
@@ -116,14 +116,14 @@
                 zoomControl: true,
                 clickableIcons: false,
               }
-        )
+        );
         
         var marker = new google.maps.Marker({
             map: map,
             position: mapCenter,
         });
         
-        document.getElementById('add_comment_btn').addEventListener('click',login_judge,false)
+        document.getElementById('add_comment_btn').addEventListener('click',login_judge,false);
     }
     function login_judge(){
         if(user_name==''){
