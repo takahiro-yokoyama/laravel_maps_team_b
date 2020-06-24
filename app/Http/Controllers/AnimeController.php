@@ -11,8 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class AnimeController extends Controller
 {
-  
-    
+
     public function index(){
         $animes = Anime::get();
         return view('top', [

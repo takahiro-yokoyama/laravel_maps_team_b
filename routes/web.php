@@ -24,9 +24,26 @@ Route::get('/top', 'AnimeController@index');
 // 初めての方向けページ
 Route::get('/guide', 'GuideAction');
 
+// スポット追加フォーム
+Route::post('/mapSpotsList/create', 'AddSpotController@create');
+Route::get('/mapSpotsList/create', 'AddSpotController@create');
+// スポット追加
+Route::post('/add_spot', 'AddSpotController@store');
+
 
 //アニメ検索後
+
 Route::post('/maps/anime_search', 'AnimeController@animeIndex')->name('maps.anime_index');
 Route::post('/maps/place_search', 'AnimeController@placeIndex')->name('maps.place_index');
 Route::get('/maps/likeselect/{id}','AnimeController@likeSpotsselect');
 Route::get('/maps/likeinsert/{id}','AnimeController@likeSpotInsert');
+
+
+//お問い合わせ
+Route::get('/contact', 'ContactAction');
+
+
+//スポット詳細画面ページ
+Route::get('/detail/{id}', 'DetailController@detail');
+Route::post('/detail', 'DetailController@store');
+
