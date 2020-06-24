@@ -41,10 +41,10 @@
         <div class="header_menu"><p>ユーザー名:{!! Auth::user()->name !!}</p></div>
         
         <div class="header_menu header_spe">
-            <form method="post" action="{{ route('logout') }}">
+            <form name="logout" action="{{ route('logout') }}" method="POST">
                 @csrf
-                <input type="submit" value="ログアウト"/>
-            </form> 
+                <a href="javascript:logout.submit()" class="header_link">ログアウト</a>
+            </form>
         </div>
         <div class="header_menu header_spe"><a class="header_link" href="{{route('like.index')}}">ルート探索</a></div>
         <div class="header_menu header_spe"><a class="header_link" href="{{url('/mapSpotsList')}}">聖地一覧</a></div>
