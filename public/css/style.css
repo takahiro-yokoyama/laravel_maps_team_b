@@ -178,6 +178,7 @@ footer{
     margin-left: 100px;
 }
 .detail_table, #comment_table{
+    display:inline-block;
     border-bottom: solid 6px #aac5de;
     border-top: solid 1px#aac5de;
     border-radius: 20px;
@@ -232,7 +233,7 @@ footer{
     background-color:#C1EAFD;
     color:#777777;
     width:150px;
-    height:30px;
+    height:40px;
     border-radius:6px;
     text-align:center;
     font-weight: bold;
@@ -290,12 +291,12 @@ footer{
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
     width: 100%;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
 }
-#comment_caption{
-    text-align: center;
-    color: #5989cf;
-}
+/*#comment_caption{*/
+/*    text-align: center;*/
+/*    color: #5989cf;*/
+/*}*/
 
 #service{
     padding: 20px 0px 80px 0px;

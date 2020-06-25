@@ -39,4 +39,15 @@ class LikeController extends Controller
         $like_spot->delete();
         return redirect('/like');
     }
+    
+    public function findAnddelete(Request $requset){
+        $id = $requset->spot_id;
+        $like_spots = \Auth::user()->likeSpots;
+        foreach($like_spots as $like_spot){
+            if($like_spot->spot_id == $id){
+                $like_spot->delete();
+            };
+        }
+        exit('true');
+    }
 }
