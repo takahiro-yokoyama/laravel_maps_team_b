@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <!--This request has been blocked; the content must be served over HTTPS.このエラーをため-->
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('head_add')
     
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="{{ secure_asset('css/styles_yokoyama.css') }}">
-    <link rel="stylesheet" href="{{ secure_asset('css/styles_togei.css') }}">
-    <link rel="stylesheet" href="{{ secure_asset('css/styles_ishizaka.css') }}">
-    <link rel="stylesheet" href="{{ secure_asset('css/styles_fuxiang.css') }}">
-    <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles_yokoyama.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles_togei.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles_ishizaka.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles_fuxiang.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 <!--bootstrap4の読み込み-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
