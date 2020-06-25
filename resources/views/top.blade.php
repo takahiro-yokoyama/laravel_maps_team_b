@@ -4,6 +4,36 @@
 
 @section('content')
 <section class="content">
+    <div class="container">
+        <div id="cl1" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#cl1" data-slide-to="0" class="active"></li>
+                <li data-target="#cl1" data-slide-to="1"></li>
+                <li data-target="#cl1" data-slide-to="2"></li>
+                <li data-target="#cl1" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{asset('logo/show1.png')}}" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{asset('logo/show2.png')}}" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{asset('logo/show3.png')}}" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{asset('logo/show4.png')}}" class="d-block w-100">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#cl1" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#cl1" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
     <div id="search">
         <div class="search_key">
             <h2>アニメから検索</h2>
