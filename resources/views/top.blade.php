@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@extends('layouts.header_top')
 
 @section('title', $title)
 
@@ -49,9 +49,9 @@
         </div>
         <div class="search_key">
             <h2>地域から検索</h2>
-            <form method="POST" action="{{ route('maps.place_index') }}" class="search_container">
+            <form method="POST" action="{{ route('maps.place_index') }}" class="search_container" name="cnvForm">
                 @csrf
-                <input class="search_area_text" type="text" name="area" placeholder="東京都">
+                <input class="search_area_text" type="text" onKeyUp="checkNum()" name="area" placeholder="東京都">
                 <input type="submit" name="submit" value="検索">
             </form>
         </div>
@@ -85,4 +85,21 @@
         <img src="web_image/kaeru1.png">
     </div>
 </section>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="{{ asset('JS/main_js.js') }}"></script>
+<script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+<script>
+    function checkNum(){
+    	var txt = document.cnvForm.area.value;
+    	var result = "";
+    	for (i=0; i<txt.length; i++){
+        	if (txt.match(/[<>]/)===null){
+        		result =  txt;
+        	}else{
+        	    result = "";
+            }
+        }
+    	document.cnvForm.area.value = result;
+    }
+</script>
 @endsection
