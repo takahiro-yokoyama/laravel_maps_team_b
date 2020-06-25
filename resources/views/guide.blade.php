@@ -1,5 +1,5 @@
 @extends('layouts.header')
-
+@section('title', $title)
 @section('content')
 <div class="guide">
     <br>

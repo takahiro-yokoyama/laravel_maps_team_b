@@ -56,6 +56,7 @@ class AnimeController extends Controller
             'user_name'=>$user_name,
             'u_l_data'=>$u_l_data,
             'user_like_spot_data_json'=>$user_like_spot_data_json,
+            'title' => '検索結果'
         ]);
     }
     
@@ -93,6 +94,7 @@ class AnimeController extends Controller
             'user_name'=>$user_name,
             'u_l_data'=>$u_l_data,
             'user_like_spot_data_json'=>$user_like_spot_data_json,
+            'title' => '検索結果'
         ]);
     }
     

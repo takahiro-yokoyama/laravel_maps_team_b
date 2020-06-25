@@ -116,7 +116,7 @@ footer{
     background-color:#FF8A00;
     margin:0 auto;
     width: 260px;
-    height: 40px;
+    height: 50px;
     text-align:center;
     padding:5px;
     border:1px solid #FF8A00;
@@ -384,7 +384,19 @@ footer{
 #top_image_usagi4{
     width: 240px;
 }
-
+.detial_share_box{
+    line-height: 42px;
+}
+.share_child{
+    display:inline;
+    vertical-align: middle;
+}
+.facebook{
+    height:70px;
+}
+.twitter{
+    margin-bottom:15px;
+}
 .list_like_icon:hover{
     cursor : pointer;
 }

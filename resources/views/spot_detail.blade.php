@@ -1,11 +1,30 @@
 @extends('layouts.header')
 @section('title', $title)
+@section('head_add')
+    @foreach($spots as $spot)
+    <meta property="og:type"          content="article" />
+    <meta property="og:title"         content="聖地巡礼Map>>>{{ $spot->spot_name }}" />
+    <meta property="og:description"   content="{{ $spot->spot_content }}" />
+    <meta property="og:image"         content="{{ asset('upload_image/' . $spot->spot_image) }}" />
+    @endforeach
+@endsection
 
 @section('content')
 <section class="content">
 @foreach($spots as $spot)
-<h2 id="detail_h2">{{ $spot->anime->anime_name }}</h2>
+<h2 class="display-4"id="detail_h2">{{ $spot->anime->anime_name }}</h2>
 <h2 id="detail_h2">{{ $spot->spot_name }}</h2>
+<div id="fb-root"></div>
+<div class="detial_share_box">
+    <div class="fb-share-button share_child facebook" data-href="<?php print 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']?>" data-layout="button" data-size="large"></div>
+    
+    <div class="share_child">
+        <a href="https://twitter.com/share?text={{ $spot->spot_name }}&url=http://<?php print $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']?>" target="_blank"><img class="twitter"src="{{asset('logo/twitter.png')}}"width="80px"height="30px"></img></a>
+    </div>
+    <div class="share_child">
+        <div class="line-it-button" data-lang="ja" data-type="share-a" data-ver="3" data-url="<?php print 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']?>" data-color="default" data-size="large" data-count="false" style="display: none;"></div>
+    </div>
+</div>
 <div id="detail_page_map_box"></div>
 <img class="detail_img" src="{{ asset('upload_image/' . $spot->spot_image) }}"></img>
 <table class="detail_table">
@@ -38,7 +57,11 @@
 @endforeach
 
 <label class="comment_label">
+@if(isset(Auth::user()->name))
 <button id="add_comment_btn" class="add_comment_title" data-toggle="modal" data-target="#popup">口コミを投稿</button>
+@else
+<button id="add_comment_btn" class="add_comment_title" data-toggle="modal" data-target="#detaile_login_topic_popup">口コミを投稿</button>
+@endif
 <div class="modal fade" id="popup" tabindex="-1" role="dialog" aria-labelledby="popupLabel">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -91,10 +114,38 @@
     </table>
 </div>
 @endif
+<div class="modal fade" id="detaile_login_topic_popup">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class=“modal-title”>ログインください</h3>
+                <button class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                口コミ投稿はログインが必要です。
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal">確認</button>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="return_div"><a  class="return_link" href="{{ url('/top') }}">TOPへ戻る</a></div>
 </section>
 <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="{{ asset('JS/main_js.js') }}"></script>
+<script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+<script>
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 <script>
     var user_name;
     var map_spot;
@@ -123,7 +174,7 @@
             position: mapCenter,
         });
         
-        document.getElementById('add_comment_btn').addEventListener('click',login_judge,false);
+        // document.getElementById('add_comment_btn').addEventListener('click',login_judge,false);
     }
     function login_judge(){
         if(user_name==''){

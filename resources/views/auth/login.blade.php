@@ -1,4 +1,7 @@
 @extends('layouts.header')
+
+@section('title', 'ログイン')
+
 @section('content')
 <div class="login mx-auto text my-5 row">
 <h1>ログイン</h1>
