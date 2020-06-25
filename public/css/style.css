@@ -1,10 +1,10 @@
-.header {
+header {
     height: 140px;
     background-color: #C1EAFD;
     margin-bottom: 1px;
 }
 .header_top{
-    height: 90px;
+    height: 140px;
     background-color: #C1EAFD;
     margin-bottom: 1px;
 }
