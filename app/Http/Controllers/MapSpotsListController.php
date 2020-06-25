@@ -24,6 +24,7 @@ class MapSpotsListController extends Controller
         return view('map_spotsList',[
             'spots' => $data,
             'spots_data_json' => $spots_data_json,
+            'title' => '聖地一覧',
             ]);
     }
 }
