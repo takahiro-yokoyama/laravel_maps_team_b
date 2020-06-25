@@ -40,8 +40,7 @@ class AddSpotController extends Controller
             'spot_name' =>$request->spot_name,
             'spot_content' =>$request->spot_content,
         ]);
-        
         \Session::flash('success', '聖地を追加しました！');
-        return redirect('/top');
+        return redirect('/mapSpotsList/create');
     }
 }

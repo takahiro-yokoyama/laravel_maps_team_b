@@ -379,7 +379,19 @@ footer{
 #top_image_usagi4{
     width: 240px;
 }
-
+.detial_share_box{
+    line-height: 42px;
+}
+.share_child{
+    display:inline;
+    vertical-align: middle;
+}
+.facebook{
+    height:70px;
+}
+.twitter{
+    margin-bottom:15px;
+}
 .list_like_icon:hover{
     cursor : pointer;
 }
@@ -391,3 +403,4 @@ footer{
 .mark_text{
     margin-left: 540px;
 }
+
