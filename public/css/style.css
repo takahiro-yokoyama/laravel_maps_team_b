@@ -1,4 +1,9 @@
-header {
+.header {
+    height: 140px;
+    background-color: #C1EAFD;
+    margin-bottom: 1px;
+}
+.header_top{
     height: 90px;
     background-color: #C1EAFD;
     margin-bottom: 1px;
@@ -405,3 +410,35 @@ footer{
     margin-left: 540px;
 }
 
+.header_link{
+    float: right;
+    height: 30px;
+}
+
+.header_search{
+    float: right;
+}
+
+.header_search_key{
+    float: left;
+    width: 260px;
+    text-align: center;
+    padding: 0px 2px;
+}
+
+.header_top_logo{
+    margin: 0px;
+    position:static;
+}
+
+.logo{
+    position:relative;
+    top: 20px;
+}
+
+#header_image_usagi10{
+    width: 180px;
+    position:relative;
+    top: 45px;
+    left: 90px;
+}

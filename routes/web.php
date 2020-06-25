@@ -16,7 +16,7 @@ Auth::routes();
 
 Route::get('/mapSpotsList','MapSpotsListController@index');
 Route::resource('like','LikeController')->only(['index','destroy']);
-
+Route::post('/like/delete','LikeController@findAnddelete')->name('like.startdelete');
 
 //topページ
 Route::get('/top', 'AnimeController@index');
