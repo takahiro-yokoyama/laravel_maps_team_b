@@ -132,7 +132,7 @@
         </div>
     </div>
 </div>
-<div class="return_div"><a  class="return_link" href="{{ url('/top') }}">TOPへ戻る</a></div>
+<div class="return_div"><a class="return_link" href="{{ url('/top') }}">TOPへ戻る</a></div>
 </section>
 <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="{{ asset('JS/main_js.js') }}"></script>
