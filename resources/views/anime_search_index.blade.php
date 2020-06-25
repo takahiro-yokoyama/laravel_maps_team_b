@@ -1,5 +1,6 @@
 @extends('layouts.header')
 @section('title', $title)
+
 @section('content')
 <section class="content">
 　　<div id="map_page_map_box"></div>
@@ -20,7 +21,7 @@
                 <td>
                     <div style="float:right;margin-right:100px;margin-top:20px">
                         <img style="width:50px;height:50px" class="list_like_icon" data-like_spot_id="<?php print $spot->id; ?>"
-                        <?php if($user_name==''){print 'data-toggle="modal" data-target="#login_topic_popup"';}?>
+                        <?php if($user_name==''){print 'data-toggle="modal" data-target="#like_topic_popup"';}?>
                         <?php if(in_array($spot->id,$u_l_data)){ ?>
                             <?php print 'data-like_status="true" src="../logo/like_icon_selected.png" data-toggle="modal" data-target="#seleced_topic_popup"'?>
                         <?php }else{ ?>
@@ -58,7 +59,7 @@
 <?php       } ?>
     <div class="return_div"><a class="return_link" href="/top">検索画面に戻る</a></div>
 </section>
-<div class="modal fade" id="login_topic_popup">
+<div class="modal fade" id="like_topic_popup">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -68,7 +69,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                気になるはログインが必要です。
+                気になるにいれるはログインが必要です。
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" data-dismiss="modal">確認</button>
@@ -76,24 +77,14 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="seleced_topic_popup">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class=“modal-title”>気になるに登録しました</h3>
-                <button class="close" data-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                削除は気になる画面にやってください。
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" data-dismiss="modal">確認</button>
-            </div>
-        </div>
-    </div>
-</div>
+
+<script>
+    $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+</script>
 <script>
     var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var labelIndex = 0;
@@ -210,7 +201,9 @@
                 if(user_id == ''){
                 }else{
                     if(like_icon.dataset.like_status =='true'){
-                        alert('もう入れましたよ');
+                        like_sport_delete(like_icon.dataset.like_spot_id);
+                        like_icon.setAttribute('data-like_status','false');
+                        like_icon.src = '../logo/like_icon_noselected.png';
                     }
                     else if(like_icon.dataset.like_status =='false'){
                         console.log('add_like');
@@ -232,11 +225,30 @@
                      },
                 success:function(result){
                     if(result == 'true'){
-                        alert('追加成功しました');
                         like_sport_insert_result = true;
                     }else{
                         alert('お気に入り失敗'+result);
                     }
+                }
+        });
+    }
+    function like_sport_delete(spot_id){
+        $.ajax({
+                type:"post",
+                url:"{{route('like.startdelete')}}",
+                data:{ 
+                        'spot_id':spot_id,
+                        '_token':'{{csrf_token()}}'
+                     },
+                success:function(result){
+                    if(result == 'true'){
+                        like_sport_insert_result = true;
+                    }else{
+                        alert('Delete失敗'+result);
+                    }
+                },
+                error:function(result){
+                    console.log(result);
                 }
         });
     }
