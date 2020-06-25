@@ -1,5 +1,5 @@
 @extends('layouts.header')
-
+@section('title', $title)
 @section('content')
 <section class="content">
     <div class="like_table_content">

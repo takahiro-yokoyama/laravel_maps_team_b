@@ -52,3 +52,24 @@ footer{
     border:solid 1px #e6e6fa;
     padding:10px;
 }
+
+.spot_name{
+    cursor:pointer;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all  0.3s ease;
+}
+.spot_name:hover{
+    background-color:#C1EAFD;
+    font-size:20px;
+}
+
+.list_like_icon:hover, .map_page_map_btn:hover{
+    transform:scale(1.5);
+}
+
+#create_route:hover{
+    cursor:pointer;
+    transform:scale(1.3);
+}

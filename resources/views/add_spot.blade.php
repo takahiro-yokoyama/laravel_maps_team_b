@@ -1,5 +1,7 @@
 @extends('layouts.header')
 
+@section('title', $title)
+
 @section('content')
 <section class="content">
     <h1 id="add_h1">{{ $title }}</h1>

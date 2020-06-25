@@ -1,9 +1,18 @@
 @extends('layouts.header')
+@section('title', $title)
 @section('content')
 <section class="content">
 　　<div id="map_page_map_box"></div>
 <?php   if($spots !== []){ ?>
     <h3 id="map_h3"><?php print $anime->anime_name . "聖地リスト" ;?></h3>
+    <div class="mark_text">
+        <img src="../logo/like_icon_noselected.png" style="width:30px;height:30px">
+        <span>・・・お気に入り登録してルート探索ができます！</span>
+    </div>
+    <div class="mark_text">
+        <img src="../logo/map_page_map.png" style="width:30px;height:30px">
+        <span>・・・スポットをマップの中心にズームします！</span>
+    </div>
     <div class="list_scroll map_page_list">
         <table class="map_page_table">
             <?php foreach($spots as $spot){ ?>
