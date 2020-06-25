@@ -1,4 +1,5 @@
 @extends('layouts.header')
+@section('title', $title)
 @section('content')
 <section class="main_content">
     <!--ここに追加-->

@@ -29,6 +29,7 @@ class LikeController extends Controller
             'like_data'=>$data,
             'like_data_json'=>$like_data_json,
             'labels'=>$labels,
+            'title' => 'ルート探索'
             ]);
     }
 

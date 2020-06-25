@@ -1,4 +1,5 @@
 @extends('layouts.header')
+@section('title', $title)
 @section('content')
 <section class="content">
 　　<div id="map_page_map_box"></div>
