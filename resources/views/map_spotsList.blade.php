@@ -2,10 +2,9 @@
 @section('content')
 <section class="main_content">
     <!--ここに追加-->
-    <!--<img src="../web_image/test.png"></img>-->
     <div id="main_map_box"></div>
-    <div class="main_list_section">
-        <ul class="main_list">
+    <div class="main_list_section p-3">
+        <ul class="main_list list-unstyled">
             <?php $i=1;foreach($spots as $value){ ?>
             <li><?php print $i;?>&nbsp;&nbsp;<?php print $value->anime_name;?></li>
             <li class="main_li_no_spot">
@@ -94,6 +93,7 @@
                 map.setZoom(16);
                 map.panTo(latLng);
             });
+            
         });
     }
     
