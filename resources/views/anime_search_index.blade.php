@@ -224,6 +224,7 @@
                         spot_id:spot_id
                      },
                 success:function(result){
+                    console.log(result);
                     if(result == 'true'){
                         like_sport_insert_result = true;
                     }else{
