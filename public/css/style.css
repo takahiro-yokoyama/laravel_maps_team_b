@@ -286,7 +286,7 @@ footer{
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
     width: 100%;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
 }
 /*#comment_caption{*/
 /*    text-align: center;*/

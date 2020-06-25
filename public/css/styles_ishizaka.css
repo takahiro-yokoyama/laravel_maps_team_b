@@ -103,3 +103,11 @@ footer{
 #add_comment_btn:hover{
     transform:scale(1.3);
 }
+
+.comment_ditail{
+　　overflow-wrap: break-word;
+}
+
+#comment_table{
+    table-layout: fixed;
+}
