@@ -36,7 +36,7 @@
 <header>
     <div class="header_box">
         <a href="{{ url('/top') }}">
-            <img class="logo" src="{{ asset('logo/logo.png') }}"></img>
+            <img class="header_top_logo" src="{{ asset('logo/logo.png') }}"></img>
         </a>
         <div class="header_menu"><p>ユーザー名:{!! Auth::user()->name !!}</p></div>
         

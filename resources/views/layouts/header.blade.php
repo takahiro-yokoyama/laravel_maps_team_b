@@ -39,9 +39,9 @@
                 </form>
             </div>
             <div class="header_search_key">
-                <form method="POST" action="{{ route('maps.place_index') }}" class="search_container">
+                <form method="POST" action="{{ route('maps.place_index') }}" class="search_container" name="cnvForm">
                     @csrf
-                    <input class="" type="text" name="area" placeholder="地域から検索">
+                    <input class="" type="text" name="area" onKeyUp="checkNum()" placeholder="地域から検索">
                     <input type="submit" name="submit" value="検索">
                 </form>
             </div>
@@ -67,7 +67,7 @@
     </div>   
 </header>
 @else
-<header>
+<header class="header">
     <div class="header_box">
         <a href="{{ url('/top') }}">
             <img class="logo" src="{{ asset('logo/logo.png') }}"></img>
@@ -97,14 +97,21 @@
                         <option value="4">こちら葛飾区亀有公園前派出所</option>
                         <option value="5">サザエさん</option>
                         <option value="6">新幹線変形ロボ　シンカリオン</option>
+                        <option value="7">天気の子</option>
+                        <option value="8">耳をすませば</option>
+                        <option value="9">日常</option>
+                        <option value="10">火垂るの墓</option>
+                        <option value="11">僕だけがいない街</option>
+                        <option value="12">時をかける少女</option>
+                        <option value="13">ローリング☆ガールズ</option>
                     </select>
                     <input type="submit" name="submit" value="検索">
                 </form>
             </div>
             <div class="header_search_key">
-                <form method="POST" action="{{ route('maps.place_index') }}" class="search_container">
+                <form method="POST" action="{{ route('maps.place_index') }}" class="search_container" name="cnvForm">
                     @csrf
-                    <input class="" type="text" name="area" placeholder="地域から検索">
+                    <input class="" type="text" onKeyUp="checkNum()" name="area" placeholder="地域から検索">
                     <input type="submit" name="submit" value="検索">
                 </form>
             </div>
@@ -112,4 +119,20 @@
     </div>
 </header>
 @endif
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="{{ asset('JS/main_js.js') }}"></script>
+<script>
+    function checkNum(){
+    	var txt = document.cnvForm.area.value;
+    	var result = "";
+    	for (i=0; i<txt.length; i++){
+        	if (txt.match(/[<>]/)===null){
+        		result =  txt;
+        	}else{
+        	    result = "";
+            }
+        }
+    	document.cnvForm.area.value = result;
+    }
+</script>
 @endsection
