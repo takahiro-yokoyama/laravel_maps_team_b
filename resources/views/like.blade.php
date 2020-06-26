@@ -35,6 +35,11 @@
             <?php $i++; }}?>
         </table>
     </div>
+    <h4>交通手段を選択してください</h4>
+    <select id="route_mode" class="form-control">
+        <option name="route" value="WALKING">歩き</option>
+        <option name="route" value="DRIVING">車</option>
+    </select>
     <div id='create_route'><img class="route_img"src="logo/creat_rout.png"></img></div>
     <div id="like_spot_map_box"></div>
     <div id="route_text_content">
@@ -74,7 +79,7 @@
                 <tr class="route_tr">
                     <td ></td>
                     <td ></td>
-                    <td><img src="logo/car.png"></img></td>
+                    <td><img id="route_img_<?php print $i; ?>"src="logo/car.png"></img></td>
                     <td class="route_txt">
                         <p class="route_content">
                             距離は<span class="like_rote_content_txt"id="route_distance_<?php print $i; ?>"></span>です。<br>
@@ -216,12 +221,24 @@
         // console.log(wapp);
         // console.log(parseFloat(like_spot[0]['lat']));
         // console.log(parseFloat(like_spot[0]['lng']));
-        var request = {
+        var model = $('#route_mode option:selected').val();
+        var request;
+        if(model==='DRIVING'){
+            request = {
+            origin: new google.maps.LatLng(parseFloat(like_spot[0]['lat']),parseFloat(like_spot[0]['lng'])), // 出発地
+            destination: new google.maps.LatLng(end['lat'],end['lng']), // 目的地
+            waypoints: wapp,
+            travelMode: google.maps.DirectionsTravelMode.DRIVING, // 交通手段(歩行。DRIVINGの場合は車)
+            };
+            
+        }else if(model==='WALKING'){
+             request = {
             origin: new google.maps.LatLng(parseFloat(like_spot[0]['lat']),parseFloat(like_spot[0]['lng'])), // 出発地
             destination: new google.maps.LatLng(end['lat'],end['lng']), // 目的地
             waypoints: wapp,
             travelMode: google.maps.DirectionsTravelMode.WALKING, // 交通手段(歩行。DRIVINGの場合は車)
-        };
+            };
+        }
         directionsService = new google.maps.DirectionsService(); // ルート検索オブジェクト
         directionsDisplay = new google.maps.DirectionsRenderer({ // ルート描画オブジェクト
             map: map, // 描画先の地図
@@ -275,6 +292,12 @@
     
     function routeContentWrite(){
         var route_contens = Array.from(document.getElementsByClassName('route_conten'));
+        var img;
+        if($('#route_mode option:selected').val() == 'WALKING'){
+            img = 'walk.png'
+        }else{
+            img = 'car.png'
+        }
         console.log(route_contens);
         route_contens.forEach(function(route_conten,index){
             $('#spot_name_'+index).text(like_spot[index]['spot_name']);
@@ -282,9 +305,11 @@
             $('#table_name_'+index).text(like_spot[index]['anime_name']);
             $('#spot_content_'+index).text(like_spot[index]['spot_content']);
             $('#image_'+index).attr("src",'upload_image/'+like_spot[index]['spot_image']);
+            
             if(index<route_contens.length-1){
                  $('#route_distance_'+index).text(distance_time[index]['distance']['text']);
                  $('#route_time_'+index).text(distance_time[index]['duration']['text']);
+                 $('#route_img_'+index).attr("src",'logo/'+img);
             }
         });
     }
