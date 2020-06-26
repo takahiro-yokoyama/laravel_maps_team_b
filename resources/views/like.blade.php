@@ -56,7 +56,6 @@
                     <th></th>
                 </tr>
                 <tr>
-                    
                     <td class="like_space"></td>
                     <td>
                         <p class="font-italic" id="address_<?php print $i; ?>"><?php print $data->address;?></p>
@@ -71,6 +70,21 @@
                         <p id="spot_content_<?php print $i; ?>"><?php print $data->spot_content;?></p>
                     </td>
                 </tr>
+                <?php if($i < (sizeof($like_data) - 1)){ ?>
+                <tr class="route_tr">
+                    <td ></td>
+                    <td ></td>
+                    <td><img src="logo/car.png"></img></td>
+                    <td class="route_txt">
+                        <p class="route_content">
+                            距離は<span class="like_rote_content_txt"id="route_distance_<?php print $i; ?>"></span>です。<br>
+                            予想時間は<span class="like_rote_content_txt"id="route_time_<?php print $i; ?>"></span>です。
+                        </p>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <?php } ?>
             </div>
             <?php $i++;} ?>
         </table>
@@ -85,6 +99,7 @@
     var directionsService;
     var directionsDisplay;
     var routeflag = false;
+    var distance_time;
     //ルート生成したら、like_spot内容なくなった。原因まだ不明
     // のでここでbackup
     var like_spot_backup;
@@ -217,6 +232,9 @@
         // OKの場合ルート描画
         if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(result);
+            distance_time=result['routes'][0]['legs'];
+            console.log(result['routes'][0]['legs']);
+            routeContentWrite();
             }
         });
         
@@ -225,7 +243,6 @@
         routeflag=true;
         //text内容表示
         document.getElementById("route_text_content").style.display="block";//显示
-        routeContentWrite();
     }
     
     // Sets the map on all markers in the array.
@@ -265,6 +282,10 @@
             $('#table_name_'+index).text(like_spot[index]['anime_name']);
             $('#spot_content_'+index).text(like_spot[index]['spot_content']);
             $('#image_'+index).attr("src",'upload_image/'+like_spot[index]['spot_image']);
+            if(index<route_contens.length-1){
+                 $('#route_distance_'+index).text(distance_time[index]['distance']['text']);
+                 $('#route_time_'+index).text(distance_time[index]['duration']['text']);
+            }
         });
     }
 </script>

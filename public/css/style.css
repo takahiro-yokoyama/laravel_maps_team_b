@@ -496,3 +496,15 @@ footer{
     padding-top: 16px;
     padding-left: 14px;
 }
+.route_txt{
+    text-align:center;
+    color:#3377FF;
+}
+.like_rote_content_txt{
+    color:black;
+    font-weight:bold;
+}
+.route_tr{
+    border-top: thick double #32a1ce;
+    border-bottom:thick double #32a1ce;
+}
