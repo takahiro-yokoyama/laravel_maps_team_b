@@ -61,16 +61,16 @@ footer{
 .red{
     color:red;
 }
-.like_table{
-    border:solid 1px black;
-    border-collapse: collapse;
-    width:800px;
-    margin:0 auto;
-}
-.like_table_th,.like_table_td,.like_table_tr{
-    border:solid 1px black;
-    text-align:center;
-}
+/*.like_table{*/
+/*    border:solid 1px black;*/
+/*    border-collapse: collapse;*/
+/*    width:800px;*/
+/*    margin:0 auto;*/
+/*}*/
+/*.like_table_th,.like_table_td,.like_table_tr{*/
+/*    border:solid 1px black;*/
+/*    text-align:center;*/
+/*}*/
 #like_spot_map_box {
     width: 960px;
     height: 400px;
@@ -127,13 +127,17 @@ footer{
     width:100%;
     margin:0 auto;
     padding-top:20px;
+    margin-bottom:30px;
 }
 .like_table_content{
     margin-bottom:20px;
     padding-top: 20px;
 }
-.like_table_content table{
-    background-color: white;
+/*.like_table_content{*/
+/*    background-color: white;*/
+/*}*/
+.like_table_td{
+    border:none;
 }
 .like_page_circle{
     border:1px solid black;
@@ -441,4 +445,39 @@ footer{
     position:relative;
     top: 45px;
     left: 90px;
+}
+.success{
+    color:blue;
+}
+.error{
+    color:red;
+}
+.up{
+    margin-left:25px;
+    margin-right:25px;
+}
+.table-hover{
+    border:none;
+    border-collapse: unset;
+}
+.like_table_head{
+    text-align:center;
+}
+.like_table_head_i{
+    width:65px;
+}
+.like_table_head_ii{
+    width:190px;
+}
+.like_table_head_iii{
+    width:392px;
+}
+.like_print{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:30px;
+}
+.print_img{
+    height:58px;
 }
