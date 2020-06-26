@@ -37,7 +37,7 @@
     </div>
     <h4>交通手段を選択してください</h4>
     <select id="route_mode" class="form-control">
-        <option name="route" value="WALKING">歩き</option>
+        <option name="route" value="WALKING">徒歩</option>
         <option name="route" value="DRIVING">車</option>
     </select>
     <div id='create_route'><img class="route_img"src="logo/creat_rout.png"></img></div>
