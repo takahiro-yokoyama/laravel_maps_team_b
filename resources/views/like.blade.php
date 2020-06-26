@@ -75,7 +75,7 @@
             <?php $i++;} ?>
         </table>
     </div>
-    <a class="like_print" href="javascript:window.print();"><img class="print_img"src="logo/print.png">ロート保存印刷こちら！</img></a>
+    <a class="like_print" href="javascript:window.print();"><img class="print_img"src="logo/print.png">ルートの保存や印刷はこちら！</img></a>
 </section>
 <!--initMap is not fanction 解決策-->
 <!--<script src="custom-js-google-map.js"></script> -->
