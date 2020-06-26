@@ -25,18 +25,12 @@
     @yield('header')
     
     @foreach($errors->all() as $error)
-    <p class="error">{{ $error }}</p>
+    <p class="container error">{{ $error }}</p>
     @endforeach
     
     @if(\Session::has('success'))
-    <div class="success">
+    <div class="success container">
         {{ \Session::get('success') }}
-    </div>
-    @endif
-    
-    @if(\Session::has('error'))
-    <div class="error">
-        {{ \Session::get('error') }}
     </div>
     @endif
     
