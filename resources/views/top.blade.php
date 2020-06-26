@@ -11,6 +11,14 @@
                 <li data-target="#cl1" data-slide-to="1"></li>
                 <li data-target="#cl1" data-slide-to="2"></li>
                 <li data-target="#cl1" data-slide-to="3"></li>
+                <li data-target="#cl1" data-slide-to="4"></li>
+                <li data-target="#cl1" data-slide-to="5"></li>
+                <li data-target="#cl1" data-slide-to="6"></li>
+                <li data-target="#cl1" data-slide-to="7"></li>
+                <li data-target="#cl1" data-slide-to="8"></li>
+                <li data-target="#cl1" data-slide-to="9"></li>
+                <li data-target="#cl1" data-slide-to="10"></li>
+                <li data-target="#cl1" data-slide-to="11"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -24,6 +32,30 @@
                 </div>
                 <div class="carousel-item">
                     <img src="{{asset('logo/show4.png')}}" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{asset('logo/show5.png')}}" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{asset('logo/show6.png')}}" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{asset('logo/show7.png')}}" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{asset('logo/show8.png')}}" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{asset('logo/show9.png')}}" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{asset('logo/show10.png')}}" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{asset('logo/show11.png')}}" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{asset('logo/show12.png')}}" class="d-block w-100">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#cl1" data-slide="prev">
