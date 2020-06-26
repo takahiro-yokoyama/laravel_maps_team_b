@@ -2,8 +2,8 @@
 @section('title', $title)
 @section('content')
 <section class="content">
+<?php  if(count($spots) !== 0){ ?>
 　　<div id="map_page_map_box"></div>
-<?php   if($spots !== []){ ?>
     <h3 id="map_h3"><?php print $place . "聖地リスト" ;?></h3>
     <div class="mark_text">
         <img src="../logo/like_icon_noselected.png" style="width:30px;height:30px">
@@ -55,20 +55,22 @@
             <?php } ?>
         </table>
     </div>
-<?php       } ?>
+<?php }else{ ?>
+    <h2 class="text-center my-5">"<?php print $place ?>"の検索結果は見つかりませんでした</h2>
+<?php } ?>
     <div class="return_div"><a class="return_link" href="/top">検索画面に戻る</a></div>
 </section>
 <div class="modal fade" id="like_topic_popup">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class=“modal-title”>ログインください</h3>
+                <h3 class=“modal-title”>ログインしてください</h3>
                 <button class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                気になるにいれるはログインが必要です。
+                お気に入り追加にはログインが必要です。
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" data-dismiss="modal">確認</button>
@@ -227,7 +229,7 @@
                     if(result == 'true'){
                         like_sport_insert_result = true;
                     }else{
-                        alert('お気に入り失敗'+result);
+                        alert('お気に入り追加失敗'+result);
                     }
                 }
         });
