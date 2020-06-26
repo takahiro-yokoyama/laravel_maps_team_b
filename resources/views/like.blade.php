@@ -38,17 +38,16 @@
     <div id='create_route'><img class="route_img"src="logo/creat_rout.png"></img></div>
     <div id="like_spot_map_box"></div>
     <div id="route_text_content">
-        <table class="like_route_">
+        <table class="like_route_table">
             <?php $i = 0;foreach($like_data as $data){ ?>
             <div class="route_conten">
-                <tr>
-                    <th>
+                <tr class="like_route_table_tr">
+                    <th class="like_route_table_th">
                         <div class="like_route_icon">
                             <p><?php print $labels[$i];?></p>
                         </div>
                     </th>
-                    <th></th>
-                    <th>
+                    <th class="like_route_table_th">
                         <p id="spot_name_<?php print $i; ?>"><?php print $data->spot_name;?></p>
                     </th>
                     <th></th>
@@ -57,14 +56,7 @@
                     <th></th>
                 </tr>
                 <tr>
-                    <td>
-                        <?php if($i< (sizeof($like_data)-1)){ ?>
-                        <div class="like_page_circle"></div>
-                        <div class="like_page_circle"></div>
-                        <div class="like_page_circle"></div>
-                        <div class="like_page_circle"></div>
-                        <?php } ?>
-                    </td>
+                    
                     <td class="like_space"></td>
                     <td>
                         <p class="font-italic" id="address_<?php print $i; ?>"><?php print $data->address;?></p>

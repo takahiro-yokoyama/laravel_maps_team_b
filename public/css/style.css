@@ -481,3 +481,15 @@ footer{
 .print_img{
     height:58px;
 }
+.like_route_table td{
+    padding: 16px 0px;
+}
+.like_route_table_tr{
+    border-top: 2px solid #dee2e6;
+    border-bottom: 2px solid #dee2e6;
+    padding-top: 8px;
+}
+.like_route_table_th{
+    padding-top: 16px;
+    padding-left: 14px;
+}
