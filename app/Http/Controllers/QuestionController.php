@@ -29,7 +29,7 @@ class QuestionController extends Controller
             'name' => ['required', 'min:2', 'max:20'],
             'company' => ['required', 'min:2', 'max:20'],
             'email' => ['required', 'email', 'min:2', 'max:50'],
-            'phone' => ['required', 'numeric', 'max:9999999999'],
+            'phone' => ['required', 'numeric', 'min:0'],
         ]);
         
         $question = Question::create(
