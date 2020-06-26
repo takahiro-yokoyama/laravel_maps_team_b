@@ -153,7 +153,7 @@
                     add_address = results[0].formatted_address;
                     
                     console.log("test",add_address);
-                    var contentString = '<h1>ここにアニメスポットを追加したいですか</h1>'+
+                    var contentString = '<h1>このスポットを聖地に追加しますか？</h1>'+
                                       '<p>追加したい場所：'+ add_address +'</p>'+
                                       '<form method="get" action="/mapSpotsList/create" class="main_map_addspot">'+
                                             '<input type="hidden" name="new_address" value="'+ add_address　+'"/>'+

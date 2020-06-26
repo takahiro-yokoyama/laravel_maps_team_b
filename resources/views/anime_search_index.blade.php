@@ -63,13 +63,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class=“modal-title”>ログインください</h3>
+                <h3 class=“modal-title”>ログインしてください</h3>
                 <button class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                気になるにいれるはログインが必要です。
+                お気に入り追加にはログインが必要です。
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" data-dismiss="modal">確認</button>
@@ -228,7 +228,7 @@
                     if(result == 'true'){
                         like_sport_insert_result = true;
                     }else{
-                        alert('お気に入り失敗'+result);
+                        alert('お気に入り追加失敗'+result);
                     }
                 }
         });
