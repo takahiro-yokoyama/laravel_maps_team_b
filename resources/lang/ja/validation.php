@@ -92,7 +92,7 @@ return [
     ],
     'not_in'               => '選択された:attributeは正しくありません。',
     'not_regex'            => ':attributeの形式が正しくありません。',
-    'numeric'              => ':attributeには、数字を指定してください。',
+    'numeric'              => ':attributeには、半角数字を指定してください。',
     'present'              => ':attributeが存在していません。',
     'regex'                => ':attributeに正しい形式を指定してください。',
     'required'             => ':attributeは必ず指定してください。',
