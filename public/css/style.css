@@ -508,3 +508,7 @@ footer{
     border-top: thick double #32a1ce;
     border-bottom:thick double #32a1ce;
 }
+.form-control{
+    width:200px;
+    margin-bottom:30px;
+}
