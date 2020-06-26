@@ -8,7 +8,7 @@
             <img class="logo" src="{{ asset('logo/logo.png') }}"></img>
         </a>
         <div class="header_link">
-            <div class="header_menu"><a class="header_link" href="{{ url('/guide') }}">ガイド</a></div>
+            <div class="header_menu"><a class="header_link" href="{{ url('/guide') }}">ヘルプ</a></div>
             <div class="header_menu header_spe"><a class="header_link" href="{{ url('/login') }}">ログイン</a></div>
             <div class="header_menu header_spe"><a class="header_link" href="{{url('/register')}}">ユーザー登録</a></div>
             <div class="header_menu header_spe"><a class="header_link" data-toggle="modal" data-target="#login_topic_popup">ルート探索</a></div>
@@ -80,7 +80,7 @@
                     <a href="javascript:logout.submit()" class="header_link">ログアウト</a>
                 </form>
             </div>
-            <div class="header_menu header_spe"><a class="header_link" href="{{ url('/guide') }}">ガイド</a></div>
+            <div class="header_menu header_spe"><a class="header_link" href="{{ url('/guide') }}">ヘルプ</a></div>
             <div class="header_menu header_spe"><a class="header_link" href="{{route('like.index')}}">ルート探索</a></div>
             <div class="header_menu header_spe"><a class="header_link" href="{{url('/mapSpotsList')}}">聖地一覧</a></div>
         </div>
