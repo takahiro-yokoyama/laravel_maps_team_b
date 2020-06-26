@@ -77,7 +77,7 @@ return [
         'array'   => ':attributeには、:value個以下のアイテムを指定してください。',
     ],
     'max'                  => [
-        'numeric' => ':attributeには、:max以下の数字を指定してください。',
+        'numeric' => ':attributeには、:max以下の半角数字を指定してください。',
         'file'    => ':attributeには、:max kB以下のファイルを指定してください。',
         'string'  => ':attributeは、:max文字以下で指定してください。',
         'array'   => ':attributeは:max個以下指定してください。',
@@ -85,7 +85,7 @@ return [
     'mimes'                => ':attributeには:valuesタイプのファイルを指定してください。',
     'mimetypes'            => ':attributeには:valuesタイプのファイルを指定してください。',
     'min'                  => [
-        'numeric' => ':attributeには、:min以上の数字を指定してください。',
+        'numeric' => ':attributeには、:min以上の半角数字を指定してください。',
         'file'    => ':attributeには、:min kB以上のファイルを指定してください。',
         'string'  => ':attributeは、:min文字以上で指定してください。',
         'array'   => ':attributeは:min個以上指定してください。',
