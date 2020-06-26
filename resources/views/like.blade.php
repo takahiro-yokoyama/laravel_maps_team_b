@@ -15,7 +15,7 @@
         </table>
         <table class="table table-hover" >
             <?php if(count($like_data)==0){ ?>
-            <p>まだマーカー登録がされていないな！</p>
+            <p>まだお気に入り地点の登録がされていません！</p>
             <?php }else{ $i=0;?>
             <?php foreach($like_data as $value){ ?>
             <tr class="like_table_tr">
